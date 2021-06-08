@@ -9,7 +9,7 @@ namespace BookStorageMicroservice_Module_6_Task_1_.Services.Abstractions
     interface IBookStorage
     {
         void Add(Book book);
-        Book GetById(int id);
+        Book GetById(int? id);
         void Update(Book book);
         void Delete(Book book);
     }

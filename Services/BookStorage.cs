@@ -38,7 +38,7 @@ namespace BookStorageMicroservice_Module_6_Task_1_.Services
             _listOfBooks.Add(book);
         }
 
-        public Book GetById(int id)
+        public Book GetById(int? id)
         {
             return _listOfBooks.FirstOrDefault(b => b.Id == id);
         }

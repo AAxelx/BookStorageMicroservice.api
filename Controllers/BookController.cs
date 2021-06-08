@@ -24,9 +24,15 @@ namespace BookStorageMicroservice_Module_6_Task_1_.Controllers
 
         [HttpGet]
         [Route("/controller/action")]
-        public IActionResult GetById([FromQuery] int id)
+        public IActionResult GetById([FromQuery] int? id)
         {
-            return Ok(new SomeResponse<Book> { Status = true, Message = "All is okey" });
+            if (id != null)
+            {
+                var data = _bookStorage.GetById(id);
+                return Ok(new SomeResponse<Book> { Status = true, Message = "All is okey", Data = data });
+            }
+            else
+                return NotFound(new SomeResponse<Book> { Status = false, Message = $"We can't found book with id{id}" });
         }
 
         [HttpGet]
