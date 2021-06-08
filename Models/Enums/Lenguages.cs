@@ -9,6 +9,6 @@ namespace BookStorageMicroservice_Module_6_Task_1_.Models.Enums
     {
         English,
         Russian,
-        Ukrainian
+        Chinese
     }
 }
